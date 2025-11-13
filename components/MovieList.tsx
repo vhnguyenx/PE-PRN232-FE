@@ -17,7 +17,6 @@ import {
   DialogTitle 
 } from '@/components/ui/dialog';
 import { Search, Plus, Trash2, Edit, Film, Star } from 'lucide-react';
-import Image from 'next/image';
 
 export default function MovieList() {
   const [movies, setMovies] = useState<Movie[]>([]);
@@ -220,13 +219,10 @@ export default function MovieList() {
               <CardHeader className="p-0">
                 <div className="relative h-64 w-full bg-gradient-to-br from-blue-100 to-blue-200">
                   {movie.posterUrl ? (
-                    <Image
+                    <img
                       src={movie.posterUrl}
                       alt={movie.title}
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-                      unoptimized
+                      className="w-full h-full object-cover"
                     />
                   ) : (
                     <div className="flex items-center justify-center h-full">
